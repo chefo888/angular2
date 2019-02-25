@@ -1,0 +1,8 @@
+<h1>Pagina de Inicio {{ fecha| date:'fullDate' }}</h1>
+<h1>Pagina de Inicio {{ fecha| date:'dd/MM/yy' }}</h1>
+<h1>Utilizando pipe personalizado {{ 5|conversor:9 }}</h1>
+<input type="text" [(ngModel)]="prod">
+<button (click)="_prodServicios.addProducto(prod);prod=''">Click</button>
+<ul *ngFor="let p of _prodServicios.productos; let i = index">
+    <li>{{ (i + 1) }}.- {{ p| uppercase | lowercase }} <a (click)="_prodServicios.eliminar(i)">X</a></li>
+</ul>
